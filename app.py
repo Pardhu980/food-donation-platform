@@ -2,12 +2,18 @@ from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
-client = MongoClient('mongodb://localhost:27017/')
+# Get URI from .env
+MONGO_URI = os.environ.get('MONGO_URI')
+client = MongoClient(MONGO_URI)
 db = client['food_donation']
 collection = db['donations']
+
 
 @app.route('/')
 def index():
