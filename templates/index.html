@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Share</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .hero-buttons {
+            margin-top: 20px;
+        }
+
+        .hero-buttons a {
+            background-color: #0288d1;
+            color: white;
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .hero-buttons a:hover {
+            background-color: #0277bd;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">Food Share</div>
+        </div>
+    </header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/donate">Donate</a>
+      <a href="/receive">Receive</a>
+      <a href="/donations">View Donations</a>
+  </nav>
+
+    <div class="hero">
+        <div>
+            Donate Food. Spread Smiles.
+            
+            <div class="hero-buttons">
+                <a href="/donate">Donate Now</a>
+                <a href="/receive">Receive Food</a>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="container">
+        <h2>Welcome to our Food Donation Initiative!</h2>
+        <p>Connect with people in need by donating or receiving food with just a few clicks.</p>
+        <p>Food is picked up or delivered — helping reduce hunger and waste!</p>
+
+    </div>
+    <footer>
+    <p>&copy; 2025 FoodShare | Built with ❤️ by Pardhu</p>
+  </footer>
+</body>
+</html>

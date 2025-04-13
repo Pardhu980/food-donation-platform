@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Receive Food</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header><h1>Receive Food</h1></header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/donate">Donate</a>
+        <a href="/receive">Receive</a>
+        <a href="/donations">View Donations</a>
+    </nav>
+    <div class="container">
+        {% for donation in donations %}
+            {% if donation.status == "Available" %}
+                <div class="card">
+                    <p><strong>Donor:</strong> {{ donation.name }}</p>
+                    <p><strong>Food:</strong> {{ donation.food }}</p>
+                    <p><strong>Quantity:</strong> {{ donation.quantity }}</p>
+                    <p><strong>Location:</strong> {{ donation.location }}</p>
+                    <form method="POST">
+                        <input type="hidden" name="donation_id" value="{{ donation._id }}">
+                        <button type="submit">Mark as Received</button>
+                    </form>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>
